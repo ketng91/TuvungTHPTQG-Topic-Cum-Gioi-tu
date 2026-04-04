@@ -1,0 +1,1035 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Từ vựng Cụm giới từ- Lớp Anh thầy Kết</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #fff8f0;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+  }
+
+ header {
+  background-color: #ffd6ba;
+  padding: 15px 20px;
+  font-weight: bold;
+  color: #7a4e3e;
+  display: flex;
+  flex-wrap: wrap;       
+  align-items: center;
+  justify-content: space-between;  /* Left luôn bên trái, center căn giữa */
+  gap: 15px;
+}
+
+/* Left: icon + home text */
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 0 0 auto;          /* không bị co lại */
+}
+
+.header-left a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 24px;
+  color: #7a4e3e;
+  text-decoration: none;
+}
+
+.header-left a i {
+  font-size: 28px;
+}
+
+/* Center title */
+header {
+  position: relative;
+}
+
+.header-center {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  font-size: 32px;
+  margin: 0;
+  white-space: nowrap;
+}
+/* ===== TOP SELECT ===== */
+.top-select {
+  display: flex;
+  justify-content: flex-start;
+  margin: 20px 40px;
+}
+
+select {
+  padding: 8px 14px;
+  font-size: 18px;
+  border-radius: 8px;
+  border: 2px solid #a0e7e5;
+  background-color: #e3fdfd;
+}
+
+
+
+/* MEDIA QUERY cho điện thoại */
+@media (max-width: 480px) {
+
+    .header-center {
+    flex-basis: 100%;
+    order: 2;
+    text-align: center;
+    position: static;
+    transform: none;
+    margin-top: 8px;
+  }
+
+  .header-left {
+    order: 1;
+  }
+}
+
+  header {
+    padding: 10px 15px;
+  }
+  .header-left a {
+    font-size: 18px;
+  }
+  .header-left a i {
+    font-size: 20px;
+  }
+  .header-center {
+    font-size: 22px;
+  }
+}
+
+
+  .top-select {
+    display: flex;
+    justify-content: flex-start;
+    margin: 20px 40px;
+  }
+
+  select {
+    padding: 8px 14px;
+    font-size: 18px;
+    border-radius: 8px;
+    border: 2px solid #a0e7e5;
+    background-color: #e3fdfd;
+  }
+
+  /* Word list */
+  .word-list {
+    width: 85%;
+    margin: 20px auto;
+    background-color: #E0FBE2;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: left;
+    font-size: 22px;
+  }
+
+.word-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 6px 10px;
+  border-bottom: 1px dashed #ffb3ba;
+  transition: background-color .15s ease-in-out;
+}
+.word-row:last-child { border-bottom: none; }
+
+/* Hover đổi màu */
+.word-row:hover {
+  background-color: #fffacd; /* xanh nhạt dễ thấy */
+  cursor: pointer;
+}
+
+  /* Ôn tập */
+  .review-box {
+    margin: 40px auto;
+    width: 70%;
+    background-color: #ffe5ec;
+    padding: 25px;
+    font-weight: bold;
+    color: #607274;
+    font-size: 26px;
+    border-radius: 12px;
+    position: relative;
+  }
+  .review-buttons {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  gap: 15px;
+}
+.review-buttons button {
+  background-color: #a0e7e5;
+  border: none;
+  padding: 12px 20px;
+  font-size: 20px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.review-buttons button:hover {
+  background-color: #ffb3ba;
+}
+
+
+  /* Bài tập */
+  .exercise {
+    width: 80%;
+    margin: 0 auto 30px auto;
+    font-size: 22px;
+    text-align: left;
+  }
+
+  .exercise input {
+    width: 220px;
+    font-size: 20px;
+    padding: 5px;
+    margin-left: 10px;
+    border-radius: 6px;
+  }
+
+  .exercise button {
+    margin-left: 10px;
+    padding: 6px 12px;
+    font-size: 18px;
+    background-color: #a0e7e5;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+  }
+
+  .exercise button:hover {
+    background-color: #ffb3ba;
+  }
+
+  .result {
+    font-weight: bold;
+    color: #C5705D;
+    font-size: 20px;
+    margin-left: 10px;
+  }
+
+  footer {
+    font-size: 22px;
+    margin-top: 40px;
+    padding: 20px;
+    color: #7a4e3e;
+    background-color: #fff0e1;
+  }
+
+  .confetti {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 10px;
+    height: 10px;
+    background: red;
+    opacity: .9;
+    animation: pop .9s ease-out forwards;
+  }
+  @keyframes pop {
+    0% { transform: translate(0,0) scale(1); opacity:1;}
+    50% {transform: translate(calc(var(--x)*.5),calc(var(--y)*.4)) scale(1.1);opacity:1;}
+    100% {transform: translate(var(--x),var(--y)) scale(.5);opacity:0;}
+  }
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="header-left">
+    <a href="https://ketng91.github.io/TuvungTHPTQG-homepage/">
+      <i class="fa-solid fa-house"></i> Lớp Anh thầy Kết
+    </a>
+  </div>
+  <div class="header-center">
+    Từ vựng Cụm giới từ
+  </div>
+</header>
+
+<!-- Bộ chọn -->
+<div class="top-select">
+  <select id="wordList">
+    <option value="1">Từ vựng ADJ + OF </option>
+    <option value="2">Từ vựng ADJ + TO </option>
+    <option value="3">Từ vựng ADJ + FOR </option>
+    <option value="4">Từ vựng ADJ + WITH </option>
+    <option value="5">Từ vựng ADJ + ABOUT </option>
+    <option value="6">Từ vựng ADJ + ABOUT </option>
+    <option value="7">Các cụm + IN khác </option>
+    <option value="8">Từ vựng ADJ + FROM </option>
+    <option value="9">Từ vựng ADJ + ON </option>
+    <option value="10">Các cụm + ON khác </option>
+    <option value="11">Từ vựng ADJ + AT </option>
+    <option value="12">Các cụm + AT khác </option>
+    <option value="13">Các cụm + UNDER </option>
+    <option value="14">Các cụm + BY </option>
+    <option value="15">Các cụm + WITHOUT </option>
+    <option value="16">Các cụm + OUT OF </option>
+
+  </select>
+</div>
+
+
+
+<script>
+// Bắt sự kiện Enter cho tất cả các ô input trong bài tập
+document.addEventListener("DOMContentLoaded", function() {
+  const exerciseInputs = document.querySelectorAll(".exercise input");
+
+  exerciseInputs.forEach(input => {
+    input.addEventListener("keydown", function(e) {
+      if (e.key === "Enter") {      // Kiểm tra nếu nhấn Enter
+        e.preventDefault();          // Ngăn việc xuống dòng mặc định
+        const checkBtn = this.nextElementSibling; // giả định nút Check ngay sau input
+        if (checkBtn && checkBtn.tagName === "BUTTON") {
+          checkBtn.click();         // kích hoạt nút Check
+        }
+      }
+    });
+  });
+});
+</script>
+
+
+
+<!-- Danh sách từ vựng -->
+<div class="word-list" id="wordContainer"></div>
+
+<!-- Ôn tập -->
+<div class="review-box">
+<div id="progressCounter"
+     style="position:absolute; top:12px; right:18px;
+            font-size:18px; color:#7a4e3e;">
+  Đã biết 0 / 0
+</div>
+
+
+  <div id="vietWord">Chọn Bộ từ vựng để bắt đầu</div>
+    
+  <!-- Hiển thị đáp án -->
+<div id="answer" style="font-size:22px;color:#7a4e3e; margin-top:15px; text-align:center; min-height:40px;"></div>
+   
+  <!-- Nút bấm -->
+  <div class="review-buttons" style="margin-top:20px;">
+    <button onclick="know()">Đã biết</button>
+    <button onclick="dontKnow()">Chưa biết</button>
+    <button onclick="nextWord()">Tiếp theo</button>
+  </div>
+
+</div>
+
+<!-- Bài tập -->
+<div class="exercise" id="exercise"></div>
+
+<footer>Chúc mừng bạn đã hoàn thành bài học!</footer>
+<script>
+const selectEl = document.getElementById("wordList");
+
+function sortOptionsByNumber() {
+  const opts = Array.from(selectEl.options);
+
+  opts.sort((a, b) => {
+    return Number(a.value) - Number(b.value);
+  });
+
+  selectEl.innerHTML = "";
+  opts.forEach(o => selectEl.appendChild(o));
+}
+
+// sort ngay khi load
+sortOptionsByNumber();
+
+// sort lại khi mở dropdown
+selectEl.addEventListener("mousedown", sortOptionsByNumber);
+selectEl.addEventListener("touchstart", sortOptionsByNumber);
+</script>
+
+<script>
+/********** DATA **********/
+const data = {
+  1: [
+  { en: "afraid of (adj) /əˈfreɪd əv/", vn: "sợ hãi cái gì", tick: false },
+  { en: "frightened of (adj) /ˈfraɪtnd əv/", vn: "hoảng sợ vì cái gì", tick: false },
+  { en: "scared of (adj) /skeəd əv/", vn: "lo sợ cái gì", tick: false },
+  { en: "terrified of (adj) /ˈterɪfaɪd əv/", vn: "khiếp sợ cái gì", tick: false },
+  { en: "apprehensive of (adj) /ˌæprɪˈhensɪv əv/", vn: "e sợ, lo lắng về (tương lai)", tick: false },
+
+  { en: "aware of (adj) /əˈweər əv/", vn: "nhận thức được cái gì", tick: false },
+  { en: "conscious of (adj) /ˈkɒnʃəs əv/", vn: "có ý thức về cái gì", tick: false },
+  { en: "ignorant of (adj) /ˈɪɡnərənt əv/", vn: "không biết, thiếu hiểu biết về", tick: false },
+  { en: "informed of (adj) /ɪnˈfɔːmd əv/", vn: "được báo cho biết về", tick: false },
+  { en: "suspicious of (adj) /səˈspɪʃəs əv/", vn: "nghi ngờ về cái gì", tick: false },
+
+  { en: "capable of (adj) /ˈkeɪpəbl əv/", vn: "có khả năng làm gì", tick: false },
+  { en: "incapable of (adj) /ɪnˈkeɪpəbl əv/", vn: "không có khả năng làm gì", tick: false },
+  
+  { en: "full of (adj) /fʊl əv/", vn: "đầy cái gì", tick: false },
+  { en: "short of (adj) /ʃɔːt əv/", vn: "thiếu hụt cái gì", tick: false },
+  { en: "empty of (adj) /ˈempti əv/", vn: "trống rỗng, không có cái gì", tick: false },
+
+  { en: "typical of (adj) /ˈtɪpɪkl əv/", vn: "điển hình của cái gì", tick: false },
+  { en: "characteristic of (adj) /ˌkærəktəˈrɪstɪk əv/", vn: "đặc tính/đặc trưng của", tick: false },
+
+  { en: "proud of (adj) /praʊd əv/", vn: "tự hào về cái gì", tick: false },
+  { en: "fond of (adj) /fɒnd əv/", vn: "thích cái gì/ai", tick: false },
+  { en: "hopeful of (adj) /ˈhəʊpfl əv/", vn: "hy vọng về điều gì", tick: false },
+  { en: "confident of (adj) /ˈkɒnfɪdənt əv/", vn: "tự tin về điều gì", tick: false },
+
+  { en: "ashamed of (adj) /əˈʃeɪmd əv/", vn: "xấu hổ về cái gì", tick: false },
+  { en: "envious of (adj) /ˈenviəs əv/", vn: "đố kỵ với cái gì", tick: false },
+  { en: "jealous of (adj) /ˈdʒeləs əv/", vn: "ghen tị với cái gì", tick: false },
+
+  { en: "tired of (adj) /ˈtaɪəd əv/", vn: "mệt mỏi/chán ngấy cái gì", tick: false },
+  { en: "sick of (adj) /sɪk əv/", vn: "chán ngấy cái gì", tick: false },
+  { en: "weary of (adj) /ˈwɪəri əv/", vn: "mệt lử, chán ngắt cái gì", tick: false },
+
+  { en: "critical of (adj) /ˈkrɪtɪkl əv/", vn: "chỉ trích, phê bình cái gì", tick: false },
+  { en: "guilty of (adj) /ˈɡɪlti əv/", vn: "có tội; thấy tội lỗi về", tick: false },
+  { en: "innocent of (adj) /ˈɪnəsnt əv/", vn: "vô tội", tick: false },
+  { en: "accused of (adj) /əˈkjuːzd əv/", vn: "bị buộc tội về cái gì", tick: false },
+
+  { en: "independent of (adj) /ˌɪndɪˈpendənt əv/", vn: "độc lập, không phụ thuộc vào", tick: false },
+  { en: "irrespective of (adj) /ˌɪrɪˈspektɪv əv/", vn: "bất kể, bất chấp là", tick: false },
+  { en: "regardless of (adj) /rɪˈɡɑːdləs əv/", vn: "không quan tâm đến, bất kể", tick: false },
+  { en: "reminiscent of (adj) /ˌremɪˈnɪsnt əv/", vn: "làm nhớ lại, gợi nhớ về", tick: false },
+
+  { en: "certain / sure of (adj) /ˈsɜːtn / ʃʊər əv/", vn: "chắc chắn về cái gì", tick: false },
+  { en: "ahead of (adj) /əˈhed əv/", vn: "trước thời hạn; dẫn trước", tick: false },
+  { en: "doubtful of (adj) /ˈdaʊtfl əv/", vn: "nghi ngờ về cái gì", tick: false },
+  { en: "nervous of (adj) /ˈnɜːvəs əv/", vn: "lo lắng về cái gì", tick: false },
+  { en: "joyful of (adj) /ˈdʒɔɪfl əv/", vn: "vui mừng về cái gì", tick: false },
+  { en: "quick of (adj) /kwɪk əv/", vn: "nhanh nhẹn (về trí óc/thính giác)", tick: false },
+  { en: "It is + Adj + OF + somebody", vn: "Để nhận xét tính cách của ai đó thông qua hành động. Các tính từ thường dùng: nice, brave, generous, polite, silly, selfish...). Vd: It is kind of you to help me. (Bạn thật tốt khi giúp tôi.)", tick: false },
+  { en: "Chú ý: Independent FROM (adj)/", vn: "Giành được sự độc lập từ một thế lực nào đó", tick: false },
+  { en: "Chú ý: Tired from (adj)/", vn: "Mệt mỏi vì làm việc gì (về thể chất)", tick: false },
+  ],
+
+  2: [
+  { en: "kind / nice to sb (adj) /kaɪnd/", vn: "tử tế/tốt bụng với ai", tick: false },
+  { en: "polite / civil to sb (adj) /pəˈlaɪt/", vn: "lịch sự/lễ phép với ai", tick: false },
+  { en: "rude / impolite to sb (adj) /ruːd/", vn: "thô lỗ/bất lịch sự với ai", tick: false },
+  { en: "cruel to sb (adj) /ˈkruːəl/", vn: "độc ác với ai", tick: false },
+  { en: "unkind to sb (adj) /ˌʌnˈkaɪnd/", vn: "không tử tế/xấu bụng với ai", tick: false },
+  { en: "generous to sb (adj) /ˈdʒenərəs/", vn: "hào phóng với ai", tick: false },
+
+  { en: "accustomed to (adj) /əˈkʌstəmd/", vn: "quen với cái gì (thường đi với V-ing)", tick: false },
+  { en: "used to (adj) /juːst/", vn: "đã quen với (thường đi với V-ing)", tick: false },
+  { en: "attuned to (adj) /əˈtjuːnd/", vn: "quen với/hiểu rõ cái gì", tick: false },
+  { en: "addicted to (adj) /əˈdɪktɪd/", vn: "nghiện cái gì", tick: false },
+
+  { en: "similar to (adj) /ˈsɪmɪlər/", vn: "tương tự với", tick: false },
+  { en: "identical to/with (adj) /aɪˈdentɪkl/", vn: "giống hệt với", tick: false },
+  { en: "related to (adj) /rɪˈleɪtɪd/", vn: "liên quan đến", tick: false },
+  { en: "relevant to (adj) /ˈreləvənt/", vn: "có liên quan/thích hợp với", tick: false },
+  { en: "contrary to (adj) /ˈkɒntrəri/", vn: "trái ngược với", tick: false },
+  { en: "equal to (adj) /ˈiːkwəl/", vn: "ngang bằng/đủ khả năng cho cái gì", tick: false },
+
+  { en: "dedicated to (adj) /ˈdedɪkeɪtɪd/", vn: "tận tâm/cống hiến cho", tick: false },
+  { en: "devoted to (adj) /dɪˈvəʊtɪd/", vn: "hết lòng/tận tụy với", tick: false },
+  { en: "committed to (adj) /kəˈmɪtɪd/", vn: "cam kết/tận tụy với", tick: false },
+  { en: "loyal to (adj) /ˈlɔɪəl/", vn: "trung thành với", tick: false },
+
+  { en: "vulnerable to (adj) /ˈvʌlnərəbl/", vn: "dễ bị tổn thương bởi", tick: false },
+  { en: "susceptible to (adj) /səˈseptəbl/", vn: "dễ bị ảnh hưởng/nhạy cảm với", tick: false },
+  { en: "prone to (adj) /prəʊn/", vn: "dễ bị/có thiên hướng (thường là tiêu cực)", tick: false },
+  { en: "exposed to (adj) /ɪkˈspəʊzd/", vn: "tiếp xúc với/phơi nhiễm với", tick: false },
+  { en: "open to (adj) /ˈəʊpən/", vn: "mở cửa cho/sẵn sàng tiếp nhận", tick: false },
+  { en: "subject to (adj) /ˈsʌbdʒɪkt/", vn: "phải chịu/tuân thủ theo", tick: false },
+
+  { en: "married to (adj) /ˈmærid/", vn: "kết hôn với ai", tick: false },
+  { en: "engaged to (adj) /ɪnˈɡeɪdʒd/", vn: "đính hôn với ai", tick: false },
+  { en: "opposed to (adj) /əˈpəʊzd/", vn: "phản đối cái gì", tick: false },
+  { en: "allergic to (adj) /əˈlɜːdʒɪk/", vn: "dị ứng với cái gì", tick: false },
+
+  { en: "close to (adj) /kləʊs/", vn: "gần gũi với", tick: false },
+  { en: "adjacent to (adj) /əˈdʒeɪsnt/", vn: "kế bên/sát cạnh", tick: false },
+  { en: "next to (adj) /nekst/", vn: "ngay cạnh bên", tick: false },
+
+  { en: "able to (adj) /ˈeɪbl/", vn: "có thể làm gì (đi với V-inf)", tick: false },
+  { en: "acceptable to (adj) /əkˈseptəbl/", vn: "có thể chấp nhận được với ai", tick: false },
+  { en: "agreeable to (adj) /əˈɡriːəbl/", vn: "tán thành với cái gì", tick: false },
+  { en: "available to sb (adj) /əˈveɪləbl/", vn: "có sẵn cho ai đó", tick: false },
+  { en: "delightful to sb (adj) /dɪˈlaɪtfl/", vn: "thú vị đối với ai", tick: false },
+  { en: "familiar to sb (adj) /fəˈmɪliər/", vn: "quen thuộc đối với ai", tick: false },
+  { en: "favourable to (adj) /ˈfeɪvərəbl/", vn: "thuận lợi cho cái gì", tick: false },
+  { en: "grateful to sb (adj) /ˈɡreɪtfl/", vn: "biết ơn ai đó", tick: false },
+
+  { en: "clear to (adj) /klɪər/", vn: "rõ ràng đối với ai", tick: false },
+  { en: "harmful to sb (adj) /ˈhɑːmfl/", vn: "có hại cho ai", tick: false },
+  { en: "important to (adj) /ɪmˈpɔːtnt/", vn: "quan trọng đối với ai", tick: false },
+  { en: "likely to (adj) /ˈlaɪkli/", vn: "có khả năng xảy ra (đi với V-inf)", tick: false },
+  { en: "liable to (adj) /ˈlaɪəbl/", vn: "có khả năng bị/phải chịu trách nhiệm", tick: false },
+  { en: "necessary to (adj) /ˈnesəsəri/", vn: "cần thiết cho cái gì", tick: false },
+  { en: "pleasant to (adj) /ˈpleznt/", vn: "dễ chịu với ai", tick: false },
+  { en: "preferable to (adj) /ˈprefrəbl/", vn: "đáng thích hơn/tốt hơn cái gì", tick: false },
+  { en: "profitable to (adj) /ˈprɒfɪtəbl/", vn: "có lợi cho cái gì", tick: false },
+  { en: "responsible to sb (adj) /rɪˈspɒnsəbl/", vn: "có trách nhiệm với ai (cấp trên)", tick: false },
+  { en: "willing to (adj) /ˈwɪlɪŋ/", vn: "sẵn lòng làm gì (đi với V-inf)", tick: false },
+  { en: "Chú ý: Một số cấu trúc + TO + Ving", vn: "Vd: be committed/accustomed/opposed to Ving", tick: false },
+  ],
+
+  3: [
+  { en: "famous / well-known for (adj) /ˈfeɪməs/", vn: "nổi tiếng vì cái gì", tick: false },
+  { en: "notorious / infamous for (adj) /nəʊˈtɔːriəs/", vn: "khét tiếng/tai tiếng vì cái gì", tick: false },
+  { en: "renowned for (adj) /rɪˈnaʊnd/", vn: "lừng danh/nổi tiếng về", tick: false },
+
+  { en: "ready for (adj) /ˈredi/", vn: "sẵn sàng cho cái gì", tick: false },
+  { en: "prepared for (adj) /prɪˈpeəd/", vn: "được chuẩn bị cho cái gì", tick: false },
+  { en: "late for (adj) /leɪt/", vn: "trễ/muộn cái gì (giờ học, họp...)", tick: false },
+  { en: "available for (adj) /əˈveɪləbl/", vn: "có sẵn cho việc gì", tick: false },
+
+  { en: "qualified for (adj) /ˈkwɒlɪfaɪd/", vn: "có đủ trình độ/năng lực cho", tick: false },
+  { en: "eligible for (adj) /ˈelɪdʒəbl/", vn: "đủ điều kiện cho cái gì", tick: false },
+  { en: "fit / suitable for (adj) /ˈsjuːtəbl/", vn: "phù hợp cho cái gì", tick: false },
+  { en: "appropriate for (adj) /əˈprəʊpriət/", vn: "thích hợp/thích đáng cho", tick: false },
+
+  { en: "responsible for (adj) /rɪˈspɒnsəbl/", vn: "chịu trách nhiệm cho cái gì", tick: false },
+  { en: "grateful / thankful for (adj) /ˈɡreɪtfl/", vn: "biết ơn về điều gì", tick: false },
+  { en: "sorry for (adj) /ˈsɒri/", vn: "xin lỗi/hối tiếc về điều gì", tick: false },
+
+  { en: "good for (adj) /ɡʊd/", vn: "tốt cho cái gì", tick: false },
+  { en: "bad for (adj) /bæd/", vn: "xấu/có hại cho cái gì", tick: false },
+  { en: "beneficial for (adj) /ˌbenɪˈfɪʃl/", vn: "có lợi cho cái gì", tick: false },
+  { en: "harmful for sth (adj) /ˈhɑːmfl/", vn: "có hại cho cái gì", tick: false },
+  { en: "useful for (adj) /ˈjuːsfl/", vn: "hữu ích cho cái gì", tick: false },
+
+  { en: "perfect / ideal for (adj) /ˈaɪdiəl/", vn: "hoàn hảo/lý tưởng cho cái gì", tick: false },
+  { en: "necessary for (adj) /ˈnesəsəri/", vn: "cần thiết cho cái gì", tick: false },
+  { en: "vital / essential for (adj) /ɪˈsenʃl/", vn: "thiết yếu/quan trọng cho", tick: false },
+  { en: "wait for (v) /weɪt/", vn: "đợi ai/cái gì", tick: false },
+  { en: "Chú ý: Responsible FOR sth/doing sth", vn: "Chịu trách nhiệm về việc gì", tick: false },
+  { en: "Chú ý: Responsible TO sb", vn: "Chịu trách nhiệm trước ai (cấp trên)", tick: false },
+  { en: "Chú ý: Famous FOR", vn: "Nổi tiếng vì một đặc điểm/tài năng (Ví dụ: He is famous for his voice).", tick: false },
+  { en: "Chú ý: Famous AS", vn: "Nổi tiếng với tư cách là (Ví dụ: He is famous as a singer)", tick: false },
+  { en: "Chú ý: Good FOR", vn: "Tốt cho sức khỏe, tốt cho một mục đích nào đó.", tick: false },
+  { en: "Chú ý: Good AT", vn: "Giỏi về một kỹ năng/môn học (Ví dụ: Good at Math)", tick: false },
+  { en: "Chú ý: Sorry FOR doing sth", vn: "Xin lỗi vì đã làm gì đó sai.", tick: false },
+  { en: "Chú ý: Sorry ABOUT sth", vn: "Cảm thấy lấy làm tiếc về một tình huống nào đó", tick: false },
+  { en: "Chú ý: Harmful to sb (FOR sth)", vn: "Có hại cho ai về phương diện nào đó", tick: false },
+  { en: "Chú ý: Necessary to sb (FOR sth)", vn: "Cần thiết cho ai trong việc gì đó", tick: false },
+  ],
+
+  4: [
+  { en: "pleased with (adj) /pliːzd/", vn: "hài lòng với cái gì", tick: false },
+  { en: "satisfied with (adj) /ˈsætɪsfaɪd/", vn: "thỏa mãn/vừa ý với", tick: false },
+  { en: "disappointed with/at/in/about (adj) /ˌdɪsəˈpɔɪntɪd/", vn: "thất vọng về cái gì/ai", tick: false },
+  { en: "delighted with (adj) /dɪˈlaɪtɪd/", vn: "vui mừng/vui sướng với", tick: false },
+  { en: "content with (adj) /kənˈtent/", vn: "bằng lòng/hài lòng với", tick: false },
+
+  { en: "angry / annoyed with sb (adj) /ˈæŋɡri/", vn: "tức giận/bực mình với ai", tick: false },
+  { en: "bored with (adj) /bɔːrd/", vn: "chán nản với cái gì", tick: false },
+  { en: "fed up with (adj) /fed ʌp/", vn: "chán ngấy cái gì", tick: false },
+  { en: "sick with (adj) /sɪk/", vn: "ốm yếu vì cái gì; chán ngấy", tick: false },
+
+  { en: "crowded with (adj) /ˈkraʊdɪd/", vn: "đông đúc với cái gì", tick: false },
+  { en: "packed with (adj) /pækt/", vn: "chật ních/đầy rẫy cái gì", tick: false },
+  { en: "filled with (adj) /fɪld/", vn: "đầy rẫy/được làm đầy bởi", tick: false },
+  { en: "cluttered with (adj) /ˈklʌtəd/", vn: "bừa bộn/lộn xộn với cái gì", tick: false },
+
+  { en: "familiar with sth (adj) /fəˈmɪliər/", vn: "quen thuộc/thông thạo cái gì", tick: false },
+  { en: "patient with (adj) /ˈpeɪʃnt/", vn: "kiên nhẫn với ai/cái gì", tick: false },
+  { en: "sympathetic with (adj) /ˌsɪmpəˈθetɪk/", vn: "đồng cảm/thông cảm với ai", tick: false },
+  { en: "friendly with (adj) /ˈfrendli/", vn: "thân thiện với ai", tick: false },
+
+  { en: "identical with/to (adj) /aɪˈdentɪkl/", vn: "giống hệt với cái gì", tick: false },
+  { en: "consistent with (adj) /kənˈsɪstənt/", vn: "nhất quán/phù hợp với", tick: false },
+  { en: "busy with (adj) /ˈbɪzi/", vn: "bận rộn với cái gì", tick: false },
+  { en: "careful with (adj) /ˈkeəfl/", vn: "cẩn thận với cái gì", tick: false },
+
+  { en: "associated with (adj) /əˈsəʊsieɪtɪd/", vn: "liên kết/liên quan đến", tick: false },
+  { en: "blessed with (adj) /blest/", vn: "được ban cho cái gì (may mắn)", tick: false },
+  { en: "contemporaneous with (adj) /kənˌtempəˈreɪniəs/", vn: "cùng thời với", tick: false },
+  { en: "incompatible with (adj) /ˌɪnkəmˈpætəbl/", vn: "không tương thích/xung khắc với", tick: false },
+  { en: "infatuated with (adj) /ɪnˈfætʃueɪtɪd/", vn: "say mê/đắm đuối ai", tick: false },
+  { en: "preoccupied with (adj) /priˈɒkjupaɪd/", vn: "ám ảnh/bận tâm về cái gì", tick: false },
+  { en: "Chú ý: Angry / Annoyed WITH somebody", vn: "Giận dỗi ai đó", tick: false },
+  { en: "Chú ý: Familiar WITH something", vn: "Bạn biết rõ về cái gì đó (I am familiar with this rule)", tick: false },
+  { en: "Chú ý: Familiar TO somebody", vn: "Cái gì đó trông quen thuộc với bạn (This face is familiar to me)", tick: false },
+  { en: "Chú ý: Careful WITH something", vn: "Cẩn thận với đồ vật/tiền bạc (Be careful with the glass)", tick: false },
+  { en: "Chú ý: Careful ABOUT doing something", vn: "Cẩn thận khi làm việc gì", tick: false },
+  ],
+
+  5: [
+  { en: "anxious about (adj) /ˈæŋkʃəs/", vn: "lo lắng/bồn chồn về cái gì", tick: false },
+  { en: "worried about (adj) /ˈwʌrid/", vn: "lo lắng về cái gì", tick: false },
+  { en: "nervous about (adj) /ˈnɜːvəs/", vn: "hồi hộp/lo lắng về cái gì", tick: false },
+  { en: "apprehensive about (adj) /ˌæprɪˈhensɪv/", vn: "e sợ/lo ngại về cái gì", tick: false },
+
+  { en: "excited about (adj) /ɪkˈsaɪtɪd/", vn: "hào hứng/phấn khích về cái gì", tick: false },
+  { en: "enthusiastic about (adj) /ɪnˌθjuːziˈæstɪk/", vn: "nhiệt huyết/say mê về cái gì", tick: false },
+  { en: "optimistic about (adj) /ˌɒptɪˈmɪstɪk/", vn: "lạc quan về cái gì", tick: false },
+  { en: "pessimistic about (adj) /ˌpesɪˈmɪstɪk/", vn: "bi quan về cái gì", tick: false },
+
+  { en: "crazy about (adj) /ˈkreɪzi/", vn: "rất say mê/cuồng cái gì", tick: false },
+  { en: "serious about (adj) /ˈsɪəriəs/", vn: "nghiêm túc về cái gì", tick: false },
+
+  { en: "angry / annoyed about sth (adj) /ˈæŋɡri/", vn: "tức giận/bực mình về việc gì", tick: false },
+  { en: "furious about (adj) /ˈfjʊəriəs/", vn: "giận dữ/điên tiết về cái gì", tick: false },
+  { en: "upset about (adj) /ʌpˈset/", vn: "buồn khổ/thất vọng về cái gì", tick: false },
+  { en: "sad about (adj) /sæd/", vn: "buồn bã về cái gì", tick: false },
+
+  { en: "careful about (adj) /ˈkeəfl/", vn: "cẩn thận về cái gì", tick: false },
+  { en: "careless about (adj) /ˈkeələs/", vn: "cẩu thả/bất cẩn về cái gì", tick: false },
+
+  { en: "sure / certain about (adj) /ʃʊər/", vn: "chắc chắn về cái gì", tick: false },
+  { en: "confused about (adj) /kənˈfjuːzd/", vn: "bối rối/lẫn lộn về cái gì", tick: false },
+
+  { en: "sorry about sth (adj) /ˈsɒri/", vn: "xin lỗi/hối tiếc về việc gì", tick: false },
+  { en: "ashamed of/ about (adj) /əˈʃeɪmd/", vn: "xấu hổ về cái gì", tick: false },
+  { en: "ambivalent about (adj) /æmˈbɪvələnt/", vn: "có cảm xúc lẫn lộn (vừa yêu vừa ghét/vừa muốn vừa không)", tick: false },
+  { en: "skeptical about (adj) /ˈskeptɪkl/", vn: "hoài nghi/nghi ngờ về điều gì", tick: false },
+  { en: "particular about (adj) /pəˈtɪkjələr/", vn: "khó tính/cầu kỳ/kỹ tính về cái gì", tick: false },
+
+  { en: "Chú ý: Angry / Annoyed / Disappointed WITH somebody", vn: "Giận dỗi/thất vọng với người nào đó.", tick: false },
+  { en: "Chú ý: Angry / Annoyed / Disappointed ABOUT something", vn: "Giận dỗi/thất vọng về việc gì đó.", tick: false },
+  { en: "Chú ý: Sorry ABOUT something", vn: "Lấy làm tiếc về một tình huống, sự việc.", tick: false },
+  { en: "Chú ý: Sorry FOR doing something", vn: "Xin lỗi vì hành động sai trái của bản thân.", tick: false },
+  { en: "Chú ý: Anxious ABOUT", vn: "Lo lắng về một vấn đề tiêu cực.", tick: false },
+  { en: "Chú ý: Anxious FOR", vn: "Rất mong muốn, khao khát điều gì đó (Ví dụ: Anxious for a change)", tick: false },
+  { en: "Chú ý: Careful ABOUT", vn: "Cẩn thận về một nội dung, kế hoạch (Ví dụ: Careful about what you say)", tick: false },
+  { en: "Chú ý: Careful WITH", vn: "Cẩn thận khi sử dụng đồ vật, tiền bạc (Ví dụ: Careful with the money)", tick: false },
+  ],
+
+
+  6: [
+  { en: "interested in (adj) /ˈɪntrəstɪd/", vn: "quan tâm/hứng thú với cái gì", tick: false },
+  { en: "involved in (adj) /ɪnˈvɒlvd/", vn: "có liên quan đến/tham gia vào", tick: false },
+  { en: "engaged in (adj) /ɪnˈɡeɪdʒd/", vn: "đang tham gia/bận rộn với việc gì", tick: false },
+
+  { en: "successful in (adj) /səkˈsesfl/", vn: "thành công trong việc gì", tick: false },
+  { en: "experienced in (adj) /ɪkˈspɪəriənst/", vn: "có kinh nghiệm trong việc gì", tick: false },
+  { en: "skilled in (adj) /skɪld/", vn: "có kỹ năng/khéo léo trong việc gì", tick: false },
+  { en: "fluent in (adj) /ˈfluːənt/", vn: "trôi chảy/thành thạo (ngôn ngữ nào)", tick: false },
+  { en: "weak in (adj) /wiːk/", vn: "yếu kém về cái gì", tick: false },
+
+  { en: "disappointed in (adj) /ˌdɪsəˈpɔɪntɪd/", vn: "thất vọng về ai/cái gì", tick: false },
+  { en: "confident in (adj) /ˈkɒnfɪdənt/", vn: "tự tin vào cái gì/ai", tick: false },
+  { en: "honest in (adj) /ˈɒnɪst/", vn: "trung thực trong việc gì", tick: false },
+
+  { en: "rich in (adj) /rɪtʃ/", vn: "giàu/có nhiều cái gì (khoáng sản, dưỡng chất)", tick: false },
+  { en: "deficient in (adj) /dɪˈfɪʃnt/", vn: "thiếu hụt cái gì", tick: false },
+  { en: "lacking in (adj) /ˈlækɪŋ/", vn: "thiếu sót cái gì", tick: false },
+
+  { en: "late in (adj) /leɪt/", vn: "muộn/trễ trong việc gì", tick: false },
+  { en: "lucky in (adj) /ˈlʌki/", vn: "may mắn trong việc gì", tick: false },
+  { en: "abounding in (adj) /əˈbaʊndɪŋ/", vn: "có rất nhiều; dồi dào cái gì", tick: false },
+  { en: "fertile in (adj) /ˈfɜːtaɪl/", vn: "có nhiều (ý tưởng/tài nguyên); màu mỡ", tick: false },
+  { en: "proficient in (adj) /prəˈfɪʃnt/", vn: "thành thạo; điêu luyện trong việc gì", tick: false },
+
+  { en: "Chú ý: Confident IN", vn: "Tin tưởng vào ai đó hoặc hệ thống nào đó (Ví dụ: Confident in his ability)", tick: false },
+  { en: "Chú ý: Confident OF", vn: "Chắc chắn về một kết quả nào đó sẽ xảy ra (Ví dụ: Confident of victory)", tick: false },
+  { en: "Chú ý: Disappointed IN somebody", vn: "Thất vọng về bản chất, tính cách hoặc khả năng của một người.", tick: false },
+  { en: "Chú ý: Disappointed WITH/ABOUT something", vn: "Thất vọng về một kết quả, sự việc cụ thể", tick: false },
+  { en: "Chú ý: Rich IN", vn: "Dùng cho thành phần, dưỡng chất (Ví dụ: Oranges are rich in Vitamin C)", tick: false },
+  { en: "Chú ý: Rich WITH", vn: "Dùng cho cảm giác, màu sắc hoặc sự trang trí (Ví dụ: A life rich with memories)", tick: false },
+],
+
+  7: [
+  { en: "in charge of /ɪn tʃɑːrdʒ əv/", vn: "chịu trách nhiệm/phụ trách", tick: false },
+  { en: "in the charge of /ɪn ðə tʃɑːrdʒ əv/", vn: "dưới sự cai quản/trông coi của...", tick: false },
+  { en: "in dispute with sb/st /ɪn dɪˈspjuːt/", vn: "trong tình trạng tranh chấp với...", tick: false },
+  { en: "in favour of /ɪn ˈfeɪvər əv/", vn: "ủng hộ ai/cái gì", tick: false },
+  { en: "in favour with sb /ɪn ˈfeɪvər wɪð/", vn: "được ai đó yêu mến/có thiện cảm", tick: false },
+  { en: "in memory of /ɪn ˈmeməri əv/", vn: "để tưởng nhớ/ghi nhớ ai", tick: false },
+  { en: "in search of /ɪn sɜːrtʃ əv/", vn: "đang tìm kiếm", tick: false },
+  { en: "in association with /ɪn əˌsəʊsieɪʃn wɪð/", vn: "liên kết/hợp tác với", tick: false },
+  { en: "in the name of /ɪn ðə neɪm əv/", vn: "nhân danh ai/cái gì", tick: false },
+  { en: "in recognition of /ɪn ˌrekəɡˈnɪʃn əv/", vn: "để công nhận/ghi nhận", tick: false },
+  { en: "in touch with /ɪn tʌtʃ wɪð/", vn: "liên lạc/tiếp xúc với ai", tick: false },
+  { en: "in the middle of /ɪn ðə ˈmɪdl əv/", vn: "ở giữa/đang dở dang việc gì", tick: false },
+  { en: "in the matter of /ɪn ðə ˈmætər əv/", vn: "về vấn đề/về phương diện", tick: false },
+  { en: "in consequence of /ɪn ˈkɒnsɪkwəns əv/", vn: "hậu quả là/do bởi", tick: false },
+  { en: "in place of /ɪn pleɪs əv/", vn: "thay cho/thế chỗ cho", tick: false },
+  { en: "in need of /ɪn niːd əv/", vn: "cần/có nhu cầu về cái gì", tick: false },
+  { en: "in comparison with /ɪn kəmˈpærɪsn wɪð/", vn: "so sánh với", tick: false },
+  { en: "in connection with /ɪn kəˈnekʃn wɪð/", vn: "liên quan tới/về việc", tick: false },
+  { en: "in collaboration with /ɪn kəˌlæbəˈreɪʃn wɪð/", vn: "cộng tác với", tick: false },
+  { en: "in terms of /ɪn tɜːrmz əv/", vn: "về phương diện/xét về mặt", tick: false },
+  { en: "in view of /ɪn vjuː əv/", vn: "xét thấy/bởi vì", tick: false },
+  { en: "in relation to /ɪn rɪˈleɪʃn tuː/", vn: "liên quan tới/so với", tick: false },
+  { en: "in addition /ɪn əˈdɪʃn/", vn: "ngoài ra; thêm vào đó", tick: false },
+  { en: "in advance /ɪn ədˈvɑːns/", vn: "trước (thời hạn); đặt trước", tick: false },
+  { en: "in the balance /ɪn ðə ˈbæləns/", vn: "ở thế cân bằng; do dự/chưa quyết định", tick: false },
+  { en: "in common /ɪn ˈkɒmən/", vn: "có điểm chung/điểm tương đồng", tick: false },
+  { en: "in ink /ɪn ɪŋk/", vn: "viết bằng mực (không phải bút chì)", tick: false },
+
+  { en: "in the long run /ɪn ðə lɒŋ rʌn/", vn: "về lâu về dài; kết cục", tick: false },
+  { en: "in the short run /ɪn ðə ʃɔːt rʌn/", vn: "trước mắt; trong tương lai gần", tick: false },
+  { en: "in power /ɪn ˈpaʊər/", vn: "cầm quyền; có quyền lực", tick: false },
+  { en: "in ... condition /ɪn kənˈdɪʃn/", vn: "trong điều kiện/tình trạng như thế nào", tick: false },
+
+  { en: "in a hurry /ɪn ə ˈhʌri/", vn: "đang vội vàng", tick: false },
+  { en: "in pain /ɪn peɪn/", vn: "đang bị đau (về thể chất/tinh thần)", tick: false },
+  { en: "in public /ɪn ˈpʌblɪk/", vn: "trước công chúng; nơi công cộng", tick: false },
+  { en: "in trouble with /ɪn ˈtrʌbl wɪð/", vn: "gặp rắc rối với ai/việc gì", tick: false },
+
+  { en: "in a row /ɪn ə rəʊ/", vn: "liên tiếp; xếp thành hàng", tick: false },
+  { en: "in any circumstances /ɪn ˈeni ˈsɜːrkəmstənsɪz/", vn: "trong bất kỳ hoàn cảnh nào", tick: false },
+  { en: "in the blink of an eye /ɪn ðə blɪŋk əv ən aɪ/", vn: "trong nháy mắt; cực nhanh", tick: false },
+  { en: "in vain /ɪn veɪn/", vn: "vô ích; uổng công", tick: false },
+  { en: "in a bad temper /ɪn ə bæd ˈtempər/", vn: "đang cáu kỉnh/nổi cáu", tick: false },
+  { en: "in isolation /ɪn ˌaɪsəˈleɪʃn/", vn: "riêng rẽ; trong tình trạng cách ly", tick: false },
+  { en: "in the end /ɪn ðə end/", vn: "cuối cùng; sau cùng", tick: false },
+  { en: "in the meantime /ɪn ðə ˈmiːntaɪm/", vn: "trong lúc chờ đợi; cùng lúc đó", tick: false },
+  { en: "in the past /ɪn ðə pɑːst/", vn: "trước đây; trong quá khứ", tick: false },
+  { en: "in short /ɪn ʃɔːt/", vn: "tóm lại; nói ngắn gọn", tick: false },
+  { en: "in contrast /ɪn ˈkɒntrɑːst/", vn: "ngược lại; trái ngược với đó", tick: false },
+
+  { en: "in all aspects /ɪn ɔːl ˈæspekts/", vn: "về mọi mặt; trong mọi khía cạnh", tick: false },
+  { en: "in fact /ɪn fækt/", vn: "thực tế là; thực sự thì", tick: false },
+  { en: "in one's opinion /ɪn wʌnz əˈpɪnjən/", vn: "theo quan điểm của ai đó", tick: false },
+  { en: "in general /ɪn ˈdʒenrəl/", vn: "nhìn chung; tổng thể", tick: false },
+  { en: "in particular /ɪn pəˈtɪkjələr/", vn: "nói riêng; cụ thể là", tick: false },
+
+  { en: "in theory /ɪn ˈθɪəri/", vn: "về mặt lý thuyết", tick: false },
+  { en: "in great detail /ɪn ɡreɪt ˈdiːteɪl/", vn: "một cách rất chi tiết/tỉ mỉ", tick: false },
+  { en: "in exchange for /ɪn ɪksˈtʃeɪndʒ fɔːr/", vn: "để đổi lấy/trao đổi cho cái gì", tick: false },
+  { en: "in an attempt to V /ɪn ən əˈtempt tuː/", vn: "trong nỗ lực làm gì; cố gắng để", tick: false },
+  { en: "in other words /ɪn ˈʌðər wɜːrdz/", vn: "nói cách khác; hay nói cách khác là", tick: false }
+],
+  8: [
+  { en: "different from (adj) /ˈdɪfrənt frəm/", vn: "khác với", tick: false },
+  { en: "distinct from (adj) /dɪˈstɪŋkt frəm/", vn: "riêng biệt/khác biệt hoàn toàn với", tick: false },
+  { en: "inseparable from (adj) /ɪnˈseprəbl frəm/", vn: "không thể tách rời khỏi", tick: false },
+  { en: "remote from (adj) /rɪˈməʊt frəm/", vn: "xa cách/cách biệt với", tick: false },
+
+  { en: "absent from (adj) /ˈæbsənt frəm/", vn: "vắng mặt khỏi (buổi học, họp...)", tick: false },
+  { en: "safe from (adj) /seɪf frəm/", vn: "an toàn khỏi (mối đe dọa)", tick: false },
+  { en: "free from (adj) /friː frəm/", vn: "tự do/không bị ảnh hưởng bởi (lo lắng, nợ nần)", tick: false },
+  { en: "exempt from (adj) /ɪɡˈzempt frəm/", vn: "được miễn (thuế, nghĩa vụ quân sự)", tick: false },
+
+  { en: "derived from (adj) /dɪˈraɪvd frəm/", vn: "được bắt nguồn/chiết xuất từ", tick: false },
+  { en: "resultant from (adj) /rɪˈzʌltənt frəm/", vn: "hậu quả từ/dẫn đến từ", tick: false },
+  { en: "emergent from (adj) /iˈmɜːrdʒənt frəm/", vn: "nổi lên/hiện ra từ", tick: false },
+  { en: "alien from/to (adj) /ˈeɪliən/", vn: "xa lạ/không quen thuộc với (văn hóa, tư tưởng)", tick: false },
+  { en: "tired from (adj) /ˈtaɪəd frəm/", vn: "mệt mỏi do tác động vật lý (ví dụ: chạy bộ, làm việc nặng)", tick: false },
+  { en: "hidden from (adj) /ˈhɪdn frəm/", vn: "bị che khuất khỏi (tầm nhìn/sự quan sát)", tick: false },
+
+  { en: "Chú ý: Independent FROM", vn: "Giành được độc lập sau một thời gian bị đô hộ/phụ thuộc (thường dùng cho các quốc gia)", tick: false },
+  { en: "Chú ý: Independent OF", vn: "Không phụ thuộc, không cần sự giúp đỡ của ai (thường dùng cho cá nhân, tài chính)", tick: false },
+],
+
+9: [
+  { en: "keen on (adj) /kiːn ɒn/", vn: "say mê; ham thích cái gì", tick: false },
+  { en: "intent on (adj) /ɪnˈtent ɒn/", vn: "quyết tâm làm gì; tập trung cao độ", tick: false },
+  { en: "concentrated on (adj) /ˈkɒnsntreɪtɪd ɒn/", vn: "tập trung vào cái gì đó", tick: false },
+  { en: "centred on (adj) /ˈsentəd ɒn/", vn: "xoay quanh; tập trung vào (vấn đề chính)", tick: false },
+
+  { en: "reliant on (adj) /rɪˈlaɪənt ɒn/", vn: "dựa dẫm; tin cậy vào", tick: false },
+  { en: "contingent on (adj) /kənˈtɪndʒənt ɒn/", vn: "tùy thuộc vào (điều gì xảy ra trước)", tick: false },
+
+  { en: "tough on (adj) /tʌf ɒn/", vn: "khắc nghiệt; nghiêm khắc với ai", tick: false },
+  { en: "hard on (adj) /hɑːd ɒn/", vn: "nghiêm khắc; đối xử tệ/áp lực với ai", tick: false },
+
+  { en: "based on (adj) /beɪst ɒn/", vn: "dựa trên (nền tảng/sự thật)", tick: false },
+  { en: "clear on (adj) /klɪər ɒn/", vn: "hiểu rõ/rõ ràng về (quan điểm/vấn đề)", tick: false },
+  { en: "hooked on (adj) /hʊkt ɒn/", vn: "bị nghiện; bị cuốn hút vào cái gì", tick: false },
+  { en: "dependent on (adj) /dɪˈpendənt ɒn/", vn: "phụ thuộc vào", tick: false },
+ { en: "Chú ý: Dependent và Independent", vn: "Phụ thuộc thì dùng ON, nhưng độc lập thì dùng OF hoặc FROM", tick: false },
+],
+
+10: [
+  { en: "on behalf of /ɒn bɪˈhɑːf əv/", vn: "thay mặt cho; đại diện cho ai", tick: false },
+  { en: "on the contrary /ɒn ðə ˈkɒntrəri/", vn: "trái lại; ngược lại hoàn toàn", tick: false },
+  { en: "on the verge/brink of /ɒn ðə vɜːrdʒ əv/", vn: "đang đứng bên bờ; sắp sửa (xảy ra việc gì)", tick: false },
+  { en: "on the edge of /ɒn ðə edʒ əv/", vn: "ở sát mép; trên bờ vực (nguy hiểm/tuyệt chủng)", tick: false },
+  { en: "on the grounds of /ɒn ðə ɡraʊndz əv/", vn: "bởi vì; dựa trên lý do là", tick: false },
+
+  { en: "on the morning of + ngày /ɒn ðə ˈmɔːrnɪŋ əv/", vn: "vào buổi sáng của một ngày xác định", tick: false },
+  { en: "on the occasion of /ɒn ðə əˈkeɪʒn əv/", vn: "nhân dịp (lễ, kỷ niệm...)", tick: false },
+  { en: "on the side of /ɒn ðə saɪd əv/", vn: "về phe ai; ủng hộ quan điểm của ai", tick: false },
+  { en: "on account of /ɒn əˈkaʊnt əv/", vn: "bởi vì; do bởi (thường dùng cho lý do tiêu cực)", tick: false },
+
+  { en: "on average /ɒn ˈævərɪdʒ/", vn: "tính trung bình; bình quân", tick: false },
+  { en: "on duty /ɒn ˈdjuːti/", vn: "đang trực; đang làm nhiệm vụ", tick: false },
+  { en: "on fire /ɒn ˈfaɪər/", vn: "đang cháy; rực cháy", tick: false },
+  { en: "on one's own /ɒn wʌnz əʊn/", vn: "một mình; tự thân vận động", tick: false },
+  { en: "on loan /ɒn ləʊn/", vn: "đang được cho mượn/đi vay", tick: false },
+
+  { en: "on the market /ɒn ðə ˈmɑːrkɪt/", vn: "đang có bán trên thị trường", tick: false },
+  { en: "on the spot /ɒn ðə spɒt/", vn: "ngay lập tức; tại chỗ", tick: false },
+  { en: "on a diet /ɒn ə ˈdaɪət/", vn: "đang trong chế độ ăn kiêng", tick: false },
+  { en: "on purpose /ɒn ˈpɜːrpəs/", vn: "có mục đích; cố tình làm gì", tick: false },
+
+  { en: "on sale /ɒn seɪl/", vn: "đang được bán giảm giá", tick: false },
+  { en: "on strike /ɒn straɪk/", vn: "đang đình công", tick: false },
+  { en: "on holiday /ɒn ˈhɒlədeɪ/", vn: "đang đi nghỉ lễ", tick: false },
+  { en: "on the other hand /ɒn ðə ˈʌðər hænd/", vn: "mặt khác; trái lại (dùng để so sánh)", tick: false },
+  { en: "on the whole /ɒn ðə həʊl/", vn: "nói chung; nhìn chung là", tick: false },
+  { en: "on the sidewalk /ɒn ðə ˈsaɪdwɔːk/", vn: "trên vỉa hè", tick: false },
+
+  { en: "on + thứ (ví dụ: on Monday)", vn: "vào ngày thứ trong tuần", tick: false },
+  { en: "on + tháng + ngày (ví dụ: on July 21st)", vn: "vào ngày... tháng... xác định", tick: false },
+  { en: "on the + số thứ tự + floor", vn: "ở tầng thứ... của tòa nhà", tick: false },
+  { en: "on + a/the + phương tiện (trừ taxi, car)", vn: "trên xe buýt, tàu hỏa, máy bay, tàu thủy", tick: false }
+],
+11: [
+  { en: "good at (adj) /ɡʊd æt/", vn: "giỏi về cái gì", tick: false },
+  { en: "bad / poor at (adj) /bæd/", vn: "dở/kém về cái gì", tick: false },
+  { en: "excellent / brilliant at (adj) /ˈeksələnt/", vn: "xuất sắc/rất giỏi về cái gì", tick: false },
+  { en: "skillful / skilled at (adj) /ˈskɪlfl/", vn: "khéo léo/có kỹ năng về cái gì", tick: false },
+  { en: "quick / slow at (adj) /kwɪk/", vn: "nhanh nhẹn/chậm chạp trong việc gì", tick: false },
+  { en: "hopeless at (adj) /ˈhəʊpləs/", vn: "vô vọng/rất tệ trong việc gì", tick: false },
+
+  { en: "surprised at/by (adj) /səˈpraɪzd/", vn: "ngạc nhiên về cái gì", tick: false },
+  { en: "amazed / astonished at (adj) /əˈmeɪzd/", vn: "kinh ngạc/sửng sốt về cái gì", tick: false },
+  { en: "shocked at (adj) /ʃɒkt/", vn: "bị sốc/bàng hoàng về cái gì", tick: false },
+  { en: "alarmed at (adj) /əˈlɑːmd/", vn: "lo ngại/hoảng hốt về cái gì", tick: false },
+
+  { en: "angry at sth (adj) /ˈæŋɡri/", vn: "tức giận về việc gì", tick: false },
+  { en: "annoyed at sth (adj) /əˈnɔɪd/", vn: "bực mình về việc gì", tick: false },
+  { en: "furious at sth (adj) /ˈfjʊəriəs/", vn: "giận dữ/điên tiết về việc gì", tick: false },
+
+  { en: "adroit at (adj) /əˈdrɔɪt/", vn: "khéo léo; lanh lợi trong việc gì", tick: false },
+  { en: "clumsy at (adj) /ˈklʌmzi/", vn: "vụng về trong việc gì", tick: false },
+  { en: "adept at (adj) /əˈdept/", vn: "tinh thông; lão luyện về cái gì", tick: false }
+],
+12: [
+  { en: "at any rate /æt ˈeni reɪt/", vn: "bằng bất cứ giá nào; dù sao đi nữa", tick: false },
+  { en: "at least /æt liːst/", vn: "ít nhất; tối thiểu", tick: false },
+  { en: "at disadvantage /æt ˌdɪsədˈvɑːntɪdʒ/", vn: "ở thế bất lợi; gặp khó khăn", tick: false },
+  { en: "at most /æt məʊst/", vn: "tối đa; cùng lắm là", tick: false },
+
+  { en: "at fault /æt fɔːlt/", vn: "có lỗi; sai lầm (ví dụ: Who is at fault?)", tick: false },
+  { en: "at risk /æt rɪsk/", vn: "đang gặp nguy hiểm; có nguy cơ", tick: false },
+  { en: "at present /æt ˈpreznt/", vn: "hiện tại; bây giờ", tick: false },
+  { en: "at first sight /æt fɜːst saɪt/", vn: "ngay từ cái nhìn đầu tiên", tick: false },
+
+  { en: "at times /æt taɪmz/", vn: "thỉnh thoảng; đôi khi", tick: false },
+  { en: "at first /æt fɜːst/", vn: "lúc đầu; khởi đầu", tick: false },
+  { en: "at war /æt wɔːr/", vn: "đang có chiến tranh; đang giao chiến", tick: false },
+  { en: "at last /æt lɑːst/", vn: "cuối cùng (sau một thời gian dài chờ đợi)", tick: false },
+
+  { en: "at heart /æt hɑːrt/", vn: "tận đáy lòng; bản chất thật sự là", tick: false },
+  { en: "at the moment /æt ðə ˈməʊmənt/", vn: "ngay lúc này; hiện tại", tick: false },
+  { en: "at a loss /æt ə lɒs/", vn: "thua lỗ; bối rối/không biết nói gì", tick: false },
+  { en: "at a profit /æt ə ˈprɒfɪt/", vn: "có lãi; sinh lời", tick: false },
+
+  { en: "at sea /æt siː/", vn: "ở ngoài khơi; lúng túng/bối rối", tick: false },
+  { en: "at once /æt wʌns/", vn: "ngay lập tức", tick: false }
+],
+13: [
+  { en: "under pressure /ˈʌndər ˈpreʃər/", vn: "chịu áp lực (công việc, cuộc sống)", tick: false },
+  { en: "under stress /ˈʌndər stres/", vn: "đang bị căng thẳng/stress", tick: false },
+  { en: "under the impression (that) /ɪmˈpreʃn/", vn: "có ấn tượng rằng; tin rằng (thường là sai)", tick: false },
+  { en: "under suspicion /səˈspɪʃn/", vn: "đang bị nghi ngờ (làm việc xấu)", tick: false },
+
+  { en: "under control /kənˈtrəʊl/", vn: "trong tầm kiểm soát", tick: false },
+  { en: "under the management of /ˈmænɪdʒmənt/", vn: "dưới sự quản lý của ai/tổ chức nào", tick: false },
+  { en: "under the guidance of /ˈɡaɪdns/", vn: "dưới sự hướng dẫn/chỉ bảo của", tick: false },
+  { en: "under the influence of /ˈɪnfluəns/", vn: "chịu ảnh hưởng của (ai đó/rượu bia/thuốc)", tick: false },
+  { en: "under command /kəˈmɑːnd/", vn: "dưới sự chỉ huy/mệnh lệnh của", tick: false },
+
+  { en: "under construction /kənˈstrʌkʃn/", vn: "đang được xây dựng/thi công", tick: false },
+  { en: "under repair /rɪˈpeər/", vn: "đang được sửa chữa", tick: false },
+  { en: "under discussion /dɪˈskʌʃn/", vn: "đang được thảo luận/bàn bạc", tick: false },
+  { en: "under investigation /ɪnˌvestɪˈɡeɪʃn/", vn: "đang được điều tra", tick: false },
+  { en: "under attack /əˈtæk/", vn: "đang bị tấn công/chỉ trích", tick: false },
+
+  { en: "under the weather /ˈweðər/", vn: "cảm thấy hơi mệt/không khỏe trong người", tick: false },
+  { en: "under age /eɪdʒ/", vn: "chưa đến tuổi (vị thành niên/dưới tuổi quy định)", tick: false },
+  { en: "under... circumstances /ˈsɜːrkəmstənsɪz/", vn: "trong những hoàn cảnh/tình huống...", tick: false },
+  { en: "under one's belt /belt/", vn: "đã đạt được; đã có kinh nghiệm về cái gì", tick: false }
+],
+
+14: [
+  { en: "surprised by (adj) /səˈpraɪzd/", vn: "bị làm cho ngạc nhiên bởi", tick: false },
+  { en: "amazed / astonished by (adj) /əˈmeɪzd/", vn: "bị làm cho kinh ngạc bởi", tick: false },
+  { en: "shocked by (adj) /ʃɒkt/", vn: "bị làm cho sốc/bàng hoàng bởi", tick: false },
+  { en: "fascinated by (adj) /ˈfæsɪneɪtɪd/", vn: "bị lôi cuốn/thu hút bởi", tick: false },
+  { en: "obsessed by/with (adj) /əbˈsest/", vn: "bị ám ảnh bởi", tick: false },
+
+  { en: "accompanied by (adj) /əˈkʌmpənid/", vn: "được hộ tống/đi kèm bởi", tick: false },
+  { en: "determined by (adj) /dɪˈtɜːmɪnd/", vn: "được quyết định/xác định bởi", tick: false },
+  { en: "inspired by (adj) /ɪnˈspaɪəd/", vn: "được truyền cảm hứng bởi", tick: false },
+  { en: "terrified by (adj) /ˈterɪfaɪd/", vn: "bị làm cho khiếp sợ bởi", tick: false },
+
+  { en: "by accident / by chance /baɪ ˈæksɪdənt/", vn: "tình cờ; ngẫu nhiên", tick: false },
+  { en: "by mistake /baɪ mɪˈsteɪk/", vn: "do nhầm lẫn; sơ suất", tick: false },
+  { en: "by heart /baɪ hɑːrt/", vn: "thuộc lòng (ví dụ: learn by heart)", tick: false },
+  { en: "by all means /baɪ ɔːl miːnz/", vn: "bằng mọi cách; tất nhiên là được", tick: false },
+  { en: "by no means /baɪ nəʊ miːnz/", vn: "không chút nào; tuyệt đối không", tick: false },
+
+  { en: "by degrees /baɪ dɪˈɡriːz/", vn: "dần dần; từng bước một", tick: false },
+  { en: "by virtue of /baɪ ˈvɜːrtʃuː əv/", vn: "bởi vì; nhờ vào (quyền năng/đặc tính)", tick: false },
+  { en: "by far /baɪ fɑːr/", vn: "cho đến nay; hơn hẳn (dùng trong so sánh nhất)", tick: false }
+],
+
+15: [
+  { en: "without + N/V-ing /wɪˈðaʊt/", vn: "nếu không có... (dùng thay cho If it weren't for)", tick: false },
+  { en: "but for + N /bʌt fɔːr/", vn: "nếu không có... (đồng nghĩa với Without trong câu điều kiện)", tick: false },
+  { en: "without fail /wɪˈðaʊt feɪl/", vn: "luôn luôn; chắc chắn (không bao giờ quên/sai)", tick: false },
+  { en: "without doubt /wɪˈðaʊt daʊt/", vn: "không nghi ngờ gì nữa; chắc chắn là", tick: false },
+
+  { en: "without delay /wɪˈðaʊt dɪˈleɪ/", vn: "ngay lập tức; không trì hoãn", tick: false },
+  { en: "without exception /wɪˈðaʊt ɪkˈsepʃn/", vn: "không ngoại trừ ai/cái gì; tất cả đều vậy", tick: false },
+  { en: "without warning /wɪˈðaʊt ˈwɔːrnɪŋ/", vn: "bất thình lình; không báo trước", tick: false },
+  { en: "without success /wɪˈðaʊt səkˈses/", vn: "không thành công; vô ích", tick: false },
+
+  { en: "without prejudice /wɪˈðaʊt ˈpredʒədɪs/", vn: "không gây tổn hại đến (quyền lợi/pháp lý)", tick: false },
+  { en: "worthless without /ˈwɜːθləs/", vn: "vô giá trị nếu không có cái gì", tick: false },
+  { en: "helpless without /ˈhelpləs/", vn: "bất lực/không làm gì được nếu không có", tick: false },
+  { en: "incomplete without /ˌɪnkəmˈpliːt/", vn: "không hoàn chỉnh nếu không có", tick: false }
+],
+
+16: [
+  { en: "out of order /aʊt əv ˈɔːrdər/", vn: "bị hỏng/trục trặc (máy móc, thiết bị)", tick: false },
+  { en: "out of stock /aʊt əv stɒk/", vn: "hết hàng (trong kho/cửa hàng)", tick: false },
+  { en: "out of print /aʊt əv prɪnt/", vn: "ngừng xuất bản (sách, báo)", tick: false },
+
+  { en: "out of breath /aʊt əv breθ/", vn: "hết hơi; thở hổn hển (sau khi chạy)", tick: false },
+  { en: "out of juice /aʊt əv dʒuːs/", vn: "hết pin/hết năng lượng", tick: false },
+  { en: "out of danger /aʊt əv ˈdeɪndʒər/", vn: "đã qua cơn nguy kịch/hết nguy hiểm", tick: false },
+
+  { en: "out of control /aʊt əv kənˈtrəʊl/", vn: "mất kiểm soát; ngoài tầm kiểm soát", tick: false },
+  { en: "out of reach /aʊt əv riːt/", vn: "ngoài tầm với (vật lý hoặc khả năng đạt được)", tick: false },
+  { en: "out of sight /aʊt əv saɪt/", vn: "ngoài tầm nhìn (xa mặt cách lòng)", tick: false },
+  { en: "out of mind /aʊt əv maɪnd/", vn: "mất trí; quên bẵng đi/không nghĩ tới", tick: false },
+
+  { en: "out of work /aʊt əv wɜːrk/", vn: "thất nghiệp (= unemployed)", tick: false },
+  { en: "out of date /aʊt əv deɪt/", vn: "lỗi thời; hết hạn sử dụng", tick: false },
+  { en: "out of fashion /aʊt əv ˈfæʃn/", vn: "lỗi mốt; không còn hợp thời", tick: false },
+
+  { en: "out of luck /aʊt əv lʌk/", vn: "không may mắn; hết vận may", tick: false },
+  { en: "out of the ordinary /aʊt əv ðə ˈɔːrdnri/", vn: "phi thường; khác thường; đặc biệt", tick: false },
+  { en: "out of place /aʊt əv pleɪs/", vn: "lạc lõng; không đúng chỗ/không phù hợp", tick: false },
+  { en: "out of character /aʊt əv ˈkærəktər/", vn: "khác với tính cách thường ngày", tick: false },
+  { en: "out of tune /aʊt əv tjuːn/", vn: "lệch tông; lạc điệu (hát, nhạc cụ)", tick: false }
+],
+
+
+};
+
+let currList = 1, listCopy=[], index=0;
+
+let totalWords = 0;
+let knownCount = 0;
+
+/********** LOAD LIST **********/
+function loadList(){
+  currList = document.getElementById("wordList").value;
+  listCopy = [...data[currList]];
+  totalWords = listCopy.length;
+  knownCount = 0;
+
+  updateCounter();
+  renderWords();
+  index=-1;
+  nextWord();
+  loadExercises();
+}
+
+function updateCounter(){
+  document.getElementById("progressCounter").innerText =
+    `Đã biết ${knownCount} / ${totalWords}`;
+}
+
+
+document.getElementById("wordList").onchange = loadList;
+loadList();
+
+/********** RENDER & SORT **********/
+function renderWords(){
+  const box=document.getElementById("wordContainer");
+  box.innerHTML="";
+
+  let sorted=[...data[currList]].sort((a,b)=>b.tick - a.tick);
+
+  sorted.forEach(item=>{
+    let realIndex = data[currList].indexOf(item);
+    box.innerHTML+=`
+      <div class="word-row">
+        <span>${item.en}: ${item.vn}</span>
+        <input type="checkbox" ${item.tick?"checked":""} onclick="toggleTick(${realIndex})">
+      </div>`;
+  });
+}
+
+/********** TICK UPDATE **********/
+function toggleTick(realIndex){
+  data[currList][realIndex].tick = !data[currList][realIndex].tick;
+  renderWords();
+}
+
+/********** REVIEW **********/
+function nextWord(){
+  document.getElementById("answer").innerHTML="";
+  if(listCopy.length===0){
+    document.getElementById("vietWord").innerHTML="🎉 Bạn đã học xong hết!";
+    return;
+  }
+  index=Math.floor(Math.random()*listCopy.length);
+  document.getElementById("vietWord").innerHTML=listCopy[index].vn;
+}
+
+function know(){
+  firework();
+  knownCount++;
+  listCopy.splice(index,1);
+  updateCounter();
+  nextWord();
+}
+
+function dontKnow(){
+  document.getElementById("answer").innerHTML=listCopy[index].en;
+}
+
+/********** EXERCISES **********/
+function loadExercises(){
+  const box=document.getElementById("exercise");
+  box.innerHTML="";
+  exercises[currList].forEach((item,i)=>{
+    box.innerHTML+=`
+    <div style="margin:10px 0;">
+      ${i+1}. ${item.q}
+      <input id="ex${i}">
+      <button onclick="checkEx(${i})">Check</button>
+      <span id="res${i}" class="result"></span>
+    </div>`;
+  });
+}
+
+function checkEx(i){
+  const user = document.getElementById("ex"+i).value.trim().toLowerCase();
+  const ans = exercises[currList][i].a.toLowerCase();
+  const box = document.getElementById("res"+i);
+
+  if(user === ans) {
+    box.innerHTML = "✔ Correct";
+    box.style.color = "#28a745"; // chữ Correct màu xanh lá
+    firework(); // gọi pháo hoa
+  } else {
+    box.innerHTML = "✘ " + exercises[currList][i].a;
+    box.style.color = "#D02752"; // chữ sai màu đỏ
+  }
+}
+
+/********** FIREWORK **********/
+function firework(){
+  for(let i=0;i<25;i++){
+    const c=document.createElement("div");
+    c.className="confetti";
+    c.style.setProperty("--x",(Math.random()-.5)*600+"px");
+    c.style.setProperty("--y",(Math.random()-.5)*600+"px");
+    c.style.backgroundColor=`hsl(${Math.random()*360},90%,60%)`;
+    document.body.appendChild(c);
+    setTimeout(()=>c.remove(),900);
+  }
+}
+</script>
+
+</body>
+</html>
