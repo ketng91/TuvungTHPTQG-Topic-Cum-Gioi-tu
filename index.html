@@ -307,17 +307,17 @@ select {
 <!-- Bộ chọn -->
 <div class="top-select">
   <select id="wordList">
-    <option value="1">Từ vựng ADJ + OF </option>
-    <option value="2">Từ vựng ADJ + TO </option>
-    <option value="3">Từ vựng ADJ + FOR </option>
-    <option value="4">Từ vựng ADJ + WITH </option>
+    <option value="1">Từ vựng ADJ/V/N + OF </option>
+    <option value="2">Từ vựng ADJ/V/N + TO </option>
+    <option value="3">Từ vựng ADJ/V/N + FOR </option>
+    <option value="4">Từ vựng ADJ/V + WITH </option>
     <option value="5">Từ vựng ADJ + ABOUT </option>
-    <option value="6">Từ vựng ADJ + ABOUT </option>
+    <option value="6">Từ vựng ADJ + IN </option>
     <option value="7">Các cụm + IN khác </option>
-    <option value="8">Từ vựng ADJ + FROM </option>
-    <option value="9">Từ vựng ADJ + ON </option>
+    <option value="8">Từ vựng ADJ/V + FROM </option>
+    <option value="9">Từ vựng ADJ/V + ON </option>
     <option value="10">Các cụm + ON khác </option>
-    <option value="11">Từ vựng ADJ + AT </option>
+    <option value="11">Từ vựng ADJ/V + AT </option>
     <option value="12">Các cụm + AT khác </option>
     <option value="13">Các cụm + UNDER </option>
     <option value="14">Các cụm + BY </option>
@@ -458,6 +458,14 @@ const data = {
   { en: "joyful of (adj) /ˈdʒɔɪfl əv/", vn: "vui mừng về cái gì", tick: false },
   { en: "quick of (adj) /kwɪk əv/", vn: "nhanh nhẹn (về trí óc/thính giác)", tick: false },
   { en: "It is + Adj + OF + somebody", vn: "Để nhận xét tính cách của ai đó thông qua hành động. Các tính từ thường dùng: nice, brave, generous, polite, silly, selfish...). Vd: It is kind of you to help me. (Bạn thật tốt khi giúp tôi.)", tick: false },
+
+  { en: "accuse sb of /əˈkjuːz/", vn: "buộc tội, cáo buộc ai làm gì", tick: false },
+  { en: "suspect sb of /səˈspekt/", vn: "nghi ngờ ai làm gì", tick: false },
+  { en: "remind sb of /rɪˈmaɪnd/", vn: "gợi nhớ ai về cái gì", tick: false },
+  { en: "approve of /əˈpruːv/", vn: "tán thành, đồng ý với cái gì", tick: false },
+  { en: "cause of /kɔːz/", vn: "(n) nguyên nhân của cái gì", tick: false },
+  { en: "lack of /læk/", vn: "(n) sự thiếu hụt cái gì", tick: false },
+
   { en: "Chú ý: Independent FROM (adj)/", vn: "Giành được sự độc lập từ một thế lực nào đó", tick: false },
   { en: "Chú ý: Tired from (adj)/", vn: "Mệt mỏi vì làm việc gì (về thể chất)", tick: false },
   ],
@@ -523,6 +531,22 @@ const data = {
   { en: "profitable to (adj) /ˈprɒfɪtəbl/", vn: "có lợi cho cái gì", tick: false },
   { en: "responsible to sb (adj) /rɪˈspɒnsəbl/", vn: "có trách nhiệm với ai (cấp trên)", tick: false },
   { en: "willing to (adj) /ˈwɪlɪŋ/", vn: "sẵn lòng làm gì (đi với V-inf)", tick: false },
+  { en: "immune to /ɪˈmjuːn/", vn: "miễn dịch / không bị ảnh hưởng bởi", tick: false },
+  { en: "vulnerable to /ˈvʌlnərəbl/", vn: "dễ bị tổn thương / ảnh hưởng bởi", tick: false },
+
+  { en: "attribute A to B /əˈtrɪbjuːt/", vn: "quy cái gì là do cái gì (quy nguyên nhân)", tick: false },
+  { en: "conform to/with /kənˈfɔːm/", vn: "tuân thủ, làm theo chuẩn mực/quy tắc", tick: false },
+  { en: "contribute to /kənˈtrɪbjuːt/", vn: "đóng góp, góp phần vào cái gì", tick: false },
+  { en: "subscribe to /səbˈskraɪb/", vn: "đăng ký (dịch vụ); tán thành (quan điểm)", tick: false },
+  { en: "cater to/for /ˈkeɪtər/", vn: "phục vụ, đáp ứng nhu cầu của ai/cái gì", tick: false },
+
+
+  { en: "solution to /səˈluːʃn/", vn: "(n) giải pháp cho vấn đề gì", tick: false },
+  { en: "key to /kiː/", vn: "(n) chìa khóa / bí quyết cho cái gì", tick: false },
+  { en: "answer to /ˈɑːnsər/", vn: "(n) câu trả lời / đáp án cho cái gì", tick: false },
+  { en: "attitude towards/to /ˈætɪtjuːd/", vn: "(n) thái độ đối với cái gì", tick: false },
+  { en: "damage to /ˈdæmɪdʒ/", vn: "(n) thiệt hại đối với cái gì", tick: false },
+  
   { en: "Chú ý: Một số cấu trúc + TO + Ving", vn: "Vd: be committed/accustomed/opposed to Ving", tick: false },
   ],
 
@@ -554,7 +578,18 @@ const data = {
   { en: "perfect / ideal for (adj) /ˈaɪdiəl/", vn: "hoàn hảo/lý tưởng cho cái gì", tick: false },
   { en: "necessary for (adj) /ˈnesəsəri/", vn: "cần thiết cho cái gì", tick: false },
   { en: "vital / essential for (adj) /ɪˈsenʃl/", vn: "thiết yếu/quan trọng cho", tick: false },
+  
   { en: "wait for (v) /weɪt/", vn: "đợi ai/cái gì", tick: false },
+  { en: "blame sb for /bleɪm/", vn: "đổ lỗi cho ai về việc gì", tick: false },
+  { en: "punish sb for /ˈpʌnɪʃ/", vn: "trừng phạt ai vì việc gì", tick: false },
+  { en: "apologize for /əˈpɒlədʒaɪz/", vn: "xin lỗi vì điều gì", tick: false },
+  { en: "criticize sb for /ˈkrɪtɪsaɪz/", vn: "chỉ trích ai về việc gì", tick: false },
+  { en: "trade A for B /treɪd/", vn: "đổi cái này lấy cái khác", tick: false },
+  { en: "compensate sb for /ˈkɒmpənseɪt/", vn: "đền bù, bồi thường cho ai về cái gì", tick: false },
+
+  { en: "demand for /dɪˈmɑːnd/", vn: "(n) nhu cầu về cái gì", tick: false },
+  { en: "reason for /ˈriːzn/", vn: "(n)lý do cho việc gì", tick: false },
+  
   { en: "Chú ý: Responsible FOR sth/doing sth", vn: "Chịu trách nhiệm về việc gì", tick: false },
   { en: "Chú ý: Responsible TO sb", vn: "Chịu trách nhiệm trước ai (cấp trên)", tick: false },
   { en: "Chú ý: Famous FOR", vn: "Nổi tiếng vì một đặc điểm/tài năng (Ví dụ: He is famous for his voice).", tick: false },
@@ -600,6 +635,15 @@ const data = {
   { en: "incompatible with (adj) /ˌɪnkəmˈpætəbl/", vn: "không tương thích/xung khắc với", tick: false },
   { en: "infatuated with (adj) /ɪnˈfætʃueɪtɪd/", vn: "say mê/đắm đuối ai", tick: false },
   { en: "preoccupied with (adj) /priˈɒkjupaɪd/", vn: "ám ảnh/bận tâm về cái gì", tick: false },
+
+  { en: "provide/equip sb with /prəˈvaɪd/", vn: "cung cấp/trang bị cho ai cái gì", tick: false },
+  { en: "supply sb with /səˈplaɪ/", vn: "cung cấp cho ai cái gì", tick: false },
+  { en: "threaten sb with sth /ˈθretn/", vn: "đe dọa ai bằng cái gì", tick: false },
+  { en: "charge sb with sth /tʃɑːdʒ/", vn: "buộc tội ai về tội gì (= accuse sb of)", tick: false },
+  { en: "interfere with /ˌɪntəˈfɪər/", vn: "can thiệp, gây cản trở tới cái gì", tick: false },
+  { en: "comply with /kəmˈplaɪ/", vn: "tuân theo, chấp hành (luật lệ, quy định)", tick: false },
+  { en: "collaborate with /kəˈlæbəreɪt/", vn: "hợp tác với ai (trong dự án, công việc)", tick: false },
+
   { en: "Chú ý: Angry / Annoyed WITH somebody", vn: "Giận dỗi ai đó", tick: false },
   { en: "Chú ý: Familiar WITH something", vn: "Bạn biết rõ về cái gì đó (I am familiar with this rule)", tick: false },
   { en: "Chú ý: Familiar TO somebody", vn: "Cái gì đó trông quen thuộc với bạn (This face is familiar to me)", tick: false },
@@ -673,6 +717,15 @@ const data = {
   { en: "abounding in (adj) /əˈbaʊndɪŋ/", vn: "có rất nhiều; dồi dào cái gì", tick: false },
   { en: "fertile in (adj) /ˈfɜːtaɪl/", vn: "có nhiều (ý tưởng/tài nguyên); màu mỡ", tick: false },
   { en: "proficient in (adj) /prəˈfɪʃnt/", vn: "thành thạo; điêu luyện trong việc gì", tick: false },
+
+  { en: "invest in /ɪnˈvest/", vn: "đầu tư vào cái gì", tick: false },
+  { en: "derive sth from /dɪˈraɪv/", vn: "rút ra, thu được cái gì từ đâu", tick: false },
+  { en: "involve in /ɪnˈvɒlv/", vn: "làm cho ai liên quan/tham gia vào việc gì", tick: false },
+  { en: "absorb in /əbˈzɔːb/", vn: "miệt mài, say mê (dạng bị động: be absorbed in)", tick: false },
+  { en: "engage in /ɪnˈɡeɪdʒ/", vn: "tham gia, dấn thân vào hoạt động nào", tick: false },
+  { en: "increase in /ɪnˈkriːs/", vn: "(n) sự gia tăng về cái gì", tick: false },
+  { en: "decrease in /dɪˈkriːs/", vn: "(n) sự sụt giảm về cái gì", tick: false },
+  { en: "rise in /raɪz/", vn: "(n) sự gia tăng mạnh về cái gì", tick: false },
 
   { en: "Chú ý: Confident IN", vn: "Tin tưởng vào ai đó hoặc hệ thống nào đó (Ví dụ: Confident in his ability)", tick: false },
   { en: "Chú ý: Confident OF", vn: "Chắc chắn về một kết quả nào đó sẽ xảy ra (Ví dụ: Confident of victory)", tick: false },
@@ -762,10 +815,22 @@ const data = {
   { en: "alien from/to (adj) /ˈeɪliən/", vn: "xa lạ/không quen thuộc với (văn hóa, tư tưởng)", tick: false },
   { en: "tired from (adj) /ˈtaɪəd frəm/", vn: "mệt mỏi do tác động vật lý (ví dụ: chạy bộ, làm việc nặng)", tick: false },
   { en: "hidden from (adj) /ˈhɪdn frəm/", vn: "bị che khuất khỏi (tầm nhìn/sự quan sát)", tick: false },
+  
+  { en: "prevent sb from /prɪˈvent/", vn: "ngăn chặn ai làm gì", tick: false },
+  { en: "stop sb from /stɒp/", vn: "ngăn cản ai làm gì", tick: false },
+  { en: "ban sb from /bæn/", vn: "cấm ai làm gì", tick: false },
+  { en: "deter sb from /dɪˈtɜːr/", vn: "ngăn cản, làm ai thui nhụt ý định", tick: false },
+  { en: "discourage sb from /dɪsˈkʌrɪdʒ/", vn: "làm ai nản lòng/không làm gì", tick: false },
+  { en: "protect sb from /prəˈtekt/", vn: "bảo vệ ai khỏi cái gì", tick: false },
+  { en: "recover from /rɪˈkʌvər/", vn: "hồi phục sau (bệnh tật/chấn thương)", tick: false },
+  { en: "suffer from /ˈsʌfər/", vn: "chịu đựng, bị ảnh hưởng bởi (bệnh tật)", tick: false },
+  { en: "distinguish A from B /dɪˈstɪŋɡwɪʃ/", vn: "phân biệt A với B (= tell A apart from B)", tick: false },
+
 
   { en: "Chú ý: Independent FROM", vn: "Giành được độc lập sau một thời gian bị đô hộ/phụ thuộc (thường dùng cho các quốc gia)", tick: false },
   { en: "Chú ý: Independent OF", vn: "Không phụ thuộc, không cần sự giúp đỡ của ai (thường dùng cho cá nhân, tài chính)", tick: false },
 ],
+
 
 9: [
   { en: "keen on (adj) /kiːn ɒn/", vn: "say mê; ham thích cái gì", tick: false },
@@ -783,7 +848,17 @@ const data = {
   { en: "clear on (adj) /klɪər ɒn/", vn: "hiểu rõ/rõ ràng về (quan điểm/vấn đề)", tick: false },
   { en: "hooked on (adj) /hʊkt ɒn/", vn: "bị nghiện; bị cuốn hút vào cái gì", tick: false },
   { en: "dependent on (adj) /dɪˈpendənt ɒn/", vn: "phụ thuộc vào", tick: false },
- { en: "Chú ý: Dependent và Independent", vn: "Phụ thuộc thì dùng ON, nhưng độc lập thì dùng OF hoặc FROM", tick: false },
+ 
+  { en: "congratulate sb on /kənˈɡrætʃulaɪt/", vn: "chúc mừng ai về việc gì", tick: false },
+  { en: "depend on /dɪˈpend/", vn: "phụ thuộc vào, dựa vào", tick: false },
+  { en: "rely on /rɪˈlaɪ/", vn: "tin tưởng, dựa dẫm vào", tick: false },
+  { en: "impose A on B /ɪmˈpəʊz/", vn: "áp đặt cái gì lên ai/cái gì", tick: false },
+  { en: "impact on / ˈɪmpækt/", vn: "tác động, ảnh hưởng lên (= influence / effect on)", tick: false },
+  { en: "hinge on/upon /hɪndʒ/", vn: "phụ thuộc hoàn toàn vào (kết quả/điều kiện)", tick: false },
+  { en: "spend sth on /spend/", vn: "dành/tiêu tốn cái gì vào việc gì", tick: false },
+  { en: "waste sth on /weɪst/", vn: "lãng phí cái gì vào việc gì", tick: false },
+
+  { en: "Chú ý: Dependent và Independent", vn: "Phụ thuộc thì dùng ON, nhưng độc lập thì dùng OF hoặc FROM", tick: false },
 ],
 
 10: [
@@ -840,7 +915,9 @@ const data = {
 
   { en: "adroit at (adj) /əˈdrɔɪt/", vn: "khéo léo; lanh lợi trong việc gì", tick: false },
   { en: "clumsy at (adj) /ˈklʌmzi/", vn: "vụng về trong việc gì", tick: false },
-  { en: "adept at (adj) /əˈdept/", vn: "tinh thông; lão luyện về cái gì", tick: false }
+  { en: "adept at (adj) /əˈdept/", vn: "tinh thông; lão luyện về cái gì", tick: false },
+
+  { en: "aim at / eɪm/", vn: "nhắm vào, hướng tới đối tượng nào", tick: false },
 ],
 12: [
   { en: "at any rate /æt ˈeni reɪt/", vn: "bằng bất cứ giá nào; dù sao đi nữa", tick: false },
@@ -910,7 +987,9 @@ const data = {
 
   { en: "by degrees /baɪ dɪˈɡriːz/", vn: "dần dần; từng bước một", tick: false },
   { en: "by virtue of /baɪ ˈvɜːrtʃuː əv/", vn: "bởi vì; nhờ vào (quyền năng/đặc tính)", tick: false },
-  { en: "by far /baɪ fɑːr/", vn: "cho đến nay; hơn hẳn (dùng trong so sánh nhất)", tick: false }
+  { en: "by far /baɪ fɑːr/", vn: "cho đến nay; hơn hẳn (dùng trong so sánh nhất)", tick: false },
+
+  { en: "abide by /əˈbaɪd/", vn: "tôn trọng, tuân thủ (quyết định, luật lệ)", tick: false },
 ],
 
 15: [
@@ -974,7 +1053,6 @@ function loadList(){
   renderWords();
   index=-1;
   nextWord();
-  loadExercises();
 }
 
 function updateCounter(){
@@ -1077,35 +1155,6 @@ function dontKnow(){
   document.getElementById("answer").innerHTML=listCopy[index].en;
 }
 
-/********** EXERCISES **********/
-function loadExercises(){
-  const box=document.getElementById("exercise");
-  box.innerHTML="";
-  exercises[currList].forEach((item,i)=>{
-    box.innerHTML+=`
-    <div style="margin:10px 0;">
-      ${i+1}. ${item.q}
-      <input id="ex${i}">
-      <button onclick="checkEx(${i})">Check</button>
-      <span id="res${i}" class="result"></span>
-    </div>`;
-  });
-}
-
-function checkEx(i){
-  const user = document.getElementById("ex"+i).value.trim().toLowerCase();
-  const ans = exercises[currList][i].a.toLowerCase();
-  const box = document.getElementById("res"+i);
-
-  if(user === ans) {
-    box.innerHTML = "✔ Correct";
-    box.style.color = "#28a745"; // chữ Correct màu xanh lá
-    firework(); // gọi pháo hoa
-  } else {
-    box.innerHTML = "✘ " + exercises[currList][i].a;
-    box.style.color = "#D02752"; // chữ sai màu đỏ
-  }
-}
 
 /********** FIREWORK **********/
 function firework(){
